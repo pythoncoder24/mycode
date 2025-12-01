@@ -1,0 +1,12 @@
+---
+- name: Conditional debug example
+  hosts: planetexpress
+  connection: ansible.builtin.ssh
+  gather_facts: true
+
+  tasks:
+
+    - name: Display OS family    # this task includes a variable reference
+      ansible.builtin.debug:
+        msg: "This host belongs to the {{ ansible_os_family }} family."
+
